@@ -28,7 +28,7 @@ class CoreDataManager {
         }
     }
     
-    func getTodoList() -> [TableListEntity] {
+    func getTableList() -> [TableListEntity] {
         
         let fetchRequest: NSFetchRequest<TableListEntity> = TableListEntity.fetchRequest()
         var results: [TableListEntity] = []
@@ -41,12 +41,30 @@ class CoreDataManager {
         return results
     }
     
-
+    func addItem(itemDetailPresentation: TableDetailPresentation) {
+         
+        let item : TableListEntity = TableListEntity(context: context)
+        item.uuid = UUID()
+        item.name = itemDetailPresentation.name
+        item.detail = itemDetailPresentation.detail
+        item.finishTime = itemDetailPresentation.finishTime
+          
+        saveContext()
+    }
     
-    func deleteTodo(todo : TableListEntity) {
+    func updateItem(itemDetailPresentation: TableDetailPresentation, item : TableListEntity) {
+        
+        item.name = itemDetailPresentation.name
+        item.detail = itemDetailPresentation.detail
+        item.finishTime = itemDetailPresentation.finishTime
+        
+        saveContext()
+    }
+    
+    func deleteItem(item : TableListEntity) {
         
         do {
-            context.delete(todo)
+            context.delete(item)
             try context.save()
         }
         catch {

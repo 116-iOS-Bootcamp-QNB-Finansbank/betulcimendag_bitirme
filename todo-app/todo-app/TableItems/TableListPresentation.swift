@@ -18,7 +18,7 @@ struct TableListPresentation {
         self.index = index
     }
     
-    init(todo: TableListEntity, index: Int) {
-        self.init(title: todo.name!, date: todo.finishTime!, index: index)
+    init(item: TableListEntity, index: Int) {
+        self.init(title: item.name!, date: item.finishTime!, index: index)
     }
 }

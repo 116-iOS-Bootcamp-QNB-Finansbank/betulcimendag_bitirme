@@ -49,7 +49,7 @@ class TableListViewController: UIViewController, TableListViewProtocol{
         self.presenter.viewDidLoad()
     }
     
-    @IBAction func addTodoButtonTapped(_ sender: Any) {
+    @IBAction func addTableButtonTapped(_ sender: Any) {
         presenter.addRow()
         presenter.viewDidLoad()
     }

@@ -23,7 +23,11 @@
 		772E4B95272418EF0044822B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4B94272418EF0044822B /* AppContainer.swift */; };
 		772E4B97272419110044822B /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4B96272419110044822B /* AppRouter.swift */; };
 		772E4B9A2724201A0044822B /* TableDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4B992724201A0044822B /* TableDetailBuilder.swift */; };
-		772E4B9D2724259A0044822B /* TableDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772E4B9B2724259A0044822B /* TableDetails.storyboard */; };
+		772E4BA727242DB70044822B /* TableDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4BA627242DB70044822B /* TableDetailContract.swift */; };
+		772E4BA927242DEA0044822B /* TableDetailPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4BA827242DEA0044822B /* TableDetailPresentation.swift */; };
+		772E4BAB27242E1D0044822B /* TableDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4BAA27242E1D0044822B /* TableDetailViewModel.swift */; };
+		772E4BAD27242F100044822B /* TableDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772E4BAC27242F100044822B /* TableDetailViewController.swift */; };
+		772E4BAF272431090044822B /* TableDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 772E4BAE272431090044822B /* TableDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +49,11 @@
 		772E4B94272418EF0044822B /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		772E4B96272419110044822B /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		772E4B992724201A0044822B /* TableDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailBuilder.swift; sourceTree = "<group>"; };
-		772E4B9C2724259A0044822B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TableDetails.storyboard; sourceTree = "<group>"; };
+		772E4BA627242DB70044822B /* TableDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailContract.swift; sourceTree = "<group>"; };
+		772E4BA827242DEA0044822B /* TableDetailPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailPresentation.swift; sourceTree = "<group>"; };
+		772E4BAA27242E1D0044822B /* TableDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailViewModel.swift; sourceTree = "<group>"; };
+		772E4BAC27242F100044822B /* TableDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailViewController.swift; sourceTree = "<group>"; };
+		772E4BAE272431090044822B /* TableDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,10 @@
 		77293040272383CD00EBF29A /* todo-app */ = {
 			isa = PBXGroup;
 			children = (
+				77293041272383CD00EBF29A /* AppDelegate.swift */,
+				77293043272383CD00EBF29A /* SceneDelegate.swift */,
+				772E4B94272418EF0044822B /* AppContainer.swift */,
+				772E4B96272419110044822B /* AppRouter.swift */,
 				772E4B9827241AC60044822B /* TableItemDetails */,
 				772E4B91272418490044822B /* CoreData */,
 				772E4B7F2724148C0044822B /* TableItems */,
@@ -106,11 +118,7 @@
 		772E4B91272418490044822B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				77293041272383CD00EBF29A /* AppDelegate.swift */,
 				772E4B92272418730044822B /* CoreDataManager.swift */,
-				77293043272383CD00EBF29A /* SceneDelegate.swift */,
-				772E4B94272418EF0044822B /* AppContainer.swift */,
-				772E4B96272419110044822B /* AppRouter.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -118,8 +126,12 @@
 		772E4B9827241AC60044822B /* TableItemDetails */ = {
 			isa = PBXGroup;
 			children = (
-				772E4B9B2724259A0044822B /* TableDetails.storyboard */,
 				772E4B992724201A0044822B /* TableDetailBuilder.swift */,
+				772E4BA627242DB70044822B /* TableDetailContract.swift */,
+				772E4BA827242DEA0044822B /* TableDetailPresentation.swift */,
+				772E4BAA27242E1D0044822B /* TableDetailViewModel.swift */,
+				772E4BAC27242F100044822B /* TableDetailViewController.swift */,
+				772E4BAE272431090044822B /* TableDetailViewController.xib */,
 			);
 			path = TableItemDetails;
 			sourceTree = "<group>";
@@ -181,9 +193,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772E4B9D2724259A0044822B /* TableDetails.storyboard in Resources */,
 				7729304E272383CF00EBF29A /* Assets.xcassets in Resources */,
 				772E4B8E272417B20044822B /* TableList.storyboard in Resources */,
+				772E4BAF272431090044822B /* TableDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +208,9 @@
 			files = (
 				772E4B95272418EF0044822B /* AppContainer.swift in Sources */,
 				772E4B812724152D0044822B /* TableListBuilder.swift in Sources */,
+				772E4BAD27242F100044822B /* TableDetailViewController.swift in Sources */,
+				772E4BA727242DB70044822B /* TableDetailContract.swift in Sources */,
+				772E4BAB27242E1D0044822B /* TableDetailViewModel.swift in Sources */,
 				77293042272383CD00EBF29A /* AppDelegate.swift in Sources */,
 				772E4B97272419110044822B /* AppRouter.swift in Sources */,
 				772E4B8B272416EE0044822B /* TableListPresenter.swift in Sources */,
@@ -208,6 +223,7 @@
 				77293044272383CD00EBF29A /* SceneDelegate.swift in Sources */,
 				7729304C272383CD00EBF29A /* todo_app.xcdatamodeld in Sources */,
 				772E4B90272417E00044822B /* TableListContracts.swift in Sources */,
+				772E4BA927242DEA0044822B /* TableDetailPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,14 +236,6 @@
 				772E4B8D272417B20044822B /* Base */,
 			);
 			name = TableList.storyboard;
-			sourceTree = "<group>";
-		};
-		772E4B9B2724259A0044822B /* TableDetails.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				772E4B9C2724259A0044822B /* Base */,
-			);
-			name = TableDetails.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

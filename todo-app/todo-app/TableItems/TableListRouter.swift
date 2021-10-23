@@ -15,6 +15,15 @@ class TableListRouter: NSObject, TableListRouterProtocol {
     }
     
     func navigate(to route: TableListRoute) {
-
+        switch route {
+        case .showTableDetail(let item):
+            let viewController = TableDetailBuilder.build(with: item)
+            self.view.navigationController?.pushViewController(viewController, animated: true)
+        
+        case .showTableDetailEmpty:
+            let viewController = TableDetailBuilder.buildEmpty()
+            self.view.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
+
 }

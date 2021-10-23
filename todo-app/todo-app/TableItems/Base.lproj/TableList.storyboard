@@ -48,6 +48,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ze5-6b-2t3" id="dUM-Ha-uve"/>
+                                    <outlet property="delegate" destination="Ze5-6b-2t3" id="ffy-rg-v0M"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

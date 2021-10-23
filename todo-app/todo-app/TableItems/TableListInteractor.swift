@@ -11,11 +11,11 @@ import Foundation
 
 class TableListInteractor: NSObject, TableListInteractorProtocol {
     weak var delegate: TableListInteractorDelegate?
-    private let service: CoreDataManager
+    private let dataManager: CoreDataManager
     private var tableLists: [TableListEntity] = []
     
-    init(service: CoreDataManager) {
-        self.service = service
+    init(manager: CoreDataManager) {
+        self.dataManager = manager
     }
     
     func viewDidLoad() {
@@ -24,18 +24,18 @@ class TableListInteractor: NSObject, TableListInteractorProtocol {
     }
     
     func getTableList() {
-        let results: [TableListEntity] = service.getTodoList()
+        let results: [TableListEntity] = dataManager.getTableList()
         self.tableLists = results
         self.delegate?.handleOutput(.showTableList(results))
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        let todo = tableLists[indexPath.row]
-        self.delegate?.handleOutput(.showTableDetail(todo))
+        let item = tableLists[indexPath.row]
+        self.delegate?.handleOutput(.showTableDetail(item))
     }
     
     func addRow() {
-        let todo = TableListEntity()
+    
         self.delegate?.handleOutput(.showTableDetailEmpty)
     }
 }

@@ -41,19 +41,19 @@ class TableListPresenter: NSObject, TableListPresenterProtocol {
 extension TableListPresenter: TableListInteractorDelegate {
     func handleOutput(_ output: TableListInteractorOutput) {
         switch output {
-        case .showTableList(let todoList):
+        case .showTableList(let itemList):
             var presenterList: [TableListPresentation] = []
             var i : Int = 0
             
-            for todo in todoList {
-                let p : TableListPresentation = TableListPresentation(todo: todo , index: i)
+            for item in itemList {
+                let p : TableListPresentation = TableListPresentation(item: item , index: i)
                 
                 presenterList.append(p)
                 i = i+1
             }
             view.handleOutput(.showTableList(presenterList))
-        case .showTableDetail(let todo):
-            router.navigate(to: .showTableDetail(todo))
+        case .showTableDetail(let item):
+            router.navigate(to: .showTableDetail(item))
         case .showTableDetailEmpty:
             router.navigate(to: .showTableDetailEmpty)
         }
