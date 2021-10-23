@@ -20,7 +20,11 @@
                     <items>
                         <navigationItem title="Todo App" id="DGt-ph-t0f">
                             <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="qy9-cW-KPb"/>
-                            <barButtonItem key="rightBarButtonItem" title="Save" id="kHM-fI-SFm"/>
+                            <barButtonItem key="rightBarButtonItem" title="Save" id="kHM-fI-SFm">
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="-2" id="afZ-cl-cFI"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
@@ -49,7 +53,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzc-3j-xhG">
-                    <rect key="frame" x="184" y="806" width="48" height="30"/>
+                    <rect key="frame" x="183" y="815" width="48" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Cancel"/>
                 </button>

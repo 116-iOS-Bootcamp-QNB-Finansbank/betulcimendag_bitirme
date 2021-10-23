@@ -50,6 +50,7 @@ class TableListViewController: UIViewController, TableListViewProtocol{
     }
     
     @IBAction func addTableButtonTapped(_ sender: Any) {
+
         presenter.addRow()
         presenter.viewDidLoad()
     }

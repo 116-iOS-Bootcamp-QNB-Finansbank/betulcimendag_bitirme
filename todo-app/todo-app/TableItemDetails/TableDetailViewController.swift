@@ -7,9 +7,10 @@
 
 import UIKit
 
-class TableDetailViewController: UIViewController ,UITextFieldDelegate {
+class TableDetailViewController: UIViewController  {
 
     @IBOutlet weak var itemName: UITextField!
+    
     @IBOutlet weak var itemDetail: UITextField!
 
     @IBOutlet weak var itemEndTime: UIDatePicker!
@@ -18,7 +19,7 @@ class TableDetailViewController: UIViewController ,UITextFieldDelegate {
     
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
-    let myNotificationKey = "tableListChanged"
+    let myNotificationKey = "table list updated"
 
     var item : TableListEntity
     
@@ -71,7 +72,7 @@ extension TableDetailViewController: TableDetailViewModelDelegate {
     func showTableDetail(_ item: TableDetailPresentation) {
         itemName.text = item.name
         itemDetail.text = item.detail
-        itemEndTime.date = item.finishTime
+       
     }
 }
 
